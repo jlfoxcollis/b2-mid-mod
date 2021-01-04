@@ -20,6 +20,11 @@
         <td><%= link_to 'Edit', edit_studio_path(studio) %></td>
         <td><%= link_to 'Destroy', studio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+        <% studio.movies.each do |movie| %>
+        <tr>
+          <td colspan="2"><%= link_to movie.title, movie_path(movie) %></td>
+        <tr>
+          <% end %>
     <% end %>
   </tbody>
 </table>

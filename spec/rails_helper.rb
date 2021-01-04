@@ -55,7 +55,11 @@ RSpec.configure do |config|
   #     RSpec.describe UsersController, type: :controller do
   #       # ...
   #     end
-  #
+  Studio.destroy_all
+  Actor.destroy_all
+  Movie.destroy_all
+
+
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!

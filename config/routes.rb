@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "studios#index"
   resources :actors, only: [:show]
   resources :movies, only: [:show]
   resources :studios, only: [:index]

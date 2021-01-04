@@ -34,7 +34,7 @@
 <p>
   <strong>Actors:</strong>
   <% @movie.actors.each do |actor| %>
-  <p class="actor"><%= actor.name %></p>
+  <p class="actor"><%= link_to actor.name, actor_path(actor) %></p>
   <% end %>
 </p>
 

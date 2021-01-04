@@ -37,38 +37,4 @@ class ActorsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /actors/1
-  # PATCH/PUT /actors/1.json
-  def update
-    respond_to do |format|
-      if @actor.update(actor_params)
-        format.html { redirect_to @actor, notice: 'Actor was successfully updated.' }
-        format.json { render :show, status: :ok, location: @actor }
-      else
-        format.html { render :edit }
-        format.json { render json: @actor.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /actors/1
-  # DELETE /actors/1.json
-  def destroy
-    @actor.destroy
-    respond_to do |format|
-      format.html { redirect_to actors_url, notice: 'Actor was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_actor
-      @actor = Actor.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def actor_params
-      params.require(:actor).permit(:name, :age)
-    end
 end

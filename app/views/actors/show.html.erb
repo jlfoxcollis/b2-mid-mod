@@ -10,5 +10,14 @@
   <%= @actor.age %>
 </p>
 
+<p>
+  <strong>Fellow Actors/Actresses:</strong>
+  <% @actor.find.each do |fellow| %>
+    <% if fellow != @actor.name %>
+      <%= fellow %>
+    <% end %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_actor_path(@actor) %> |
 <%= link_to 'Back', actors_path %>

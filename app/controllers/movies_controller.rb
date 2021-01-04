@@ -10,6 +10,9 @@ class MoviesController < ApplicationController
   # GET /movies/1
   # GET /movies/1.json
   def show
+    if params[:search]
+      @selected = @movie.search(params[:search])
+    end
   end
 
   # GET /movies/new

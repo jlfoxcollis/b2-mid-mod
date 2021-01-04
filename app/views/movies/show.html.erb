@@ -15,6 +15,23 @@
   <%= @movie.genre %>
 </p>
 <p>
+  <strong>Search for an Actor/Actress:</strong>
+  <%= form_tag movie_path(@movie), method: :get do %>
+  <%= text_field_tag 'search' %>
+  <div>
+    <%= submit_tag 'search' %>
+  </div>
+  <% end %>
+</p>
+<p>
+  <% if @selected %>
+    <% @selected.each do |selectee| %>
+      <p class="selected"><%= link_to selectee.name, actor_path(selectee) %></p>
+      <%= selectee.age %>
+    <% end %>
+  <% end %>
+</p>
+<p>
   <strong>Actors:</strong>
   <% @movie.actors.each do |actor| %>
   <p class="actor"><%= actor.name %></p>

@@ -3,7 +3,4 @@ class Movie < ApplicationRecord
   has_many :movie_actors, dependent: :destroy
   has_many :actors, through: :movie_actors
 
-  def average_age
-    actors.average(:age)
-  end
 end

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <strong>Creation date:</strong>
+  <%= @movie.year %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @movie.genre %>
+</p>
+<p>
+  <strong>Search for an Actor/Actress:</strong>
+  <%= form_tag movie_path(@movie), method: :get do %>
+  <%= text_field_tag 'search' %>
+  <div>
+    <%= submit_tag 'search' %>
+  </div>
+  <% end %>
+</p>
+<p>
+  <% if @selected %>
+    <% @selected.each do |selectee| %>
+      <p class="selected"><%= link_to selectee.name, actor_path(selectee) %></p>
+      <%= selectee.age %>
+    <% end %>
+  <% end %>
+</p>
+<p>
+  <strong>Actors:</strong>
+  <% @movie.actors.each do |actor| %>
+  <p class="actor"><%= link_to actor.name, actor_path(actor) %></p>
+  <% end %>
+</p>
+
+<p>
+  <strong>Average age of Actors:</strong>
+  <%= @movie.average_age %>
+</p>

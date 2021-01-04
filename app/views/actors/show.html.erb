@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @actor.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @actor.age %>
+</p>
+
+<p>
+  <strong>Fellow Actors/Actresses:</strong>
+  <% @actor.find.each do |fellow| %>
+    <% if fellow != @actor.name %>
+      <%= fellow %>
+    <% end %>
+  <% end %>
+</p>

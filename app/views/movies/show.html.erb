@@ -7,12 +7,23 @@
 
 <p>
   <strong>Creation date:</strong>
-  <%= @movie.creation_date %>
+  <%= @movie.year %>
 </p>
 
 <p>
   <strong>Genre:</strong>
   <%= @movie.genre %>
+</p>
+<p>
+  <strong>Actors:</strong>
+  <% @movie.actors.each do |actor| %>
+  <p class="actor"><%= actor.name %></p>
+  <% end %>
+</p>
+
+<p>
+  <strong>Average age of Actors:</strong>
+  <%= @movie.average_age %>
 </p>
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |

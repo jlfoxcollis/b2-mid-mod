@@ -7,9 +7,10 @@ RSpec.describe 'studio features', type: :feature do
     @s3 = Studio.create(name: "Fox", location: "Florida")
 
 
-    @m1 = @s1.movies.create(title: 'title1', creation_date: '03/07/1984', genre: 'Romance')
-    @m2 = @s2.movies.create(title: 'title2', creation_date: '01/01/2001', genre: 'Comedy')
-    @m3 = @s3.movies.create(title: 'title3', creation_date: '01/02/2001', genre: 'Bromance')
+
+    @m1 = @s1.movies.create(title: 'title1', year: 1984, genre: 'Romance')
+    @m2 = @s2.movies.create(title: 'title2', year: 2001, genre: 'Comedy')
+    @m3 = @s3.movies.create(title: 'title3', year: 2001, genre: 'Bromance')
 
     @a1 = Actor.create(name: "Johnny", age: 55)
     @a2 = Actor.create(name: "Depp", age: 54)

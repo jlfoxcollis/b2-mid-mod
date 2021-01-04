@@ -17,12 +17,12 @@ RSpec.describe 'studio features', type: :feature do
     @a3 = Actor.create(name: "leonardo", age: 23)
     @a4 = Actor.create(name: "Dicaprio", age: 32)
 
-    @ma1 = MovieActor.create(movie_id: @m1, actor_id: @a1)
-    @ma2 = MovieActor.create(movie_id: @m1, actor_id: @a3)
-    @ma3 = MovieActor.create(movie_id: @m2, actor_id: @a1)
-    @ma4 = MovieActor.create(movie_id: @m2, actor_id: @a2)
-    @ma5 = MovieActor.create(movie_id: @m2, actor_id: @a3)
-    @ma6 = MovieActor.create(movie_id: @m3, actor_id: @a4)
+    @ma1 = MovieActor.create!(movie_id: @m1.id, actor_id: @a1.id)
+    @ma2 = MovieActor.create!(movie_id: @m1.id, actor_id: @a3.id)
+    @ma3 = MovieActor.create(movie_id: @m2.id, actor_id: @a1.id)
+    @ma4 = MovieActor.create(movie_id: @m2.id, actor_id: @a2.id)
+    @ma5 = MovieActor.create(movie_id: @m2.id, actor_id: @a3.id)
+    @ma6 = MovieActor.create(movie_id: @m3.id, actor_id: @a4.id)
 
     visit studios_path
     expect(page).to have_content(@s1.name)
